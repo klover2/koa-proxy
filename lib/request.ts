@@ -9,22 +9,42 @@ export enum MethodEnum {
 }
 
 class Request {
-  post(url: string, params: Record<string, any>) {
-    return superagent.post(url).send(params);
+  post(url: string, params: unknown) {
+    if (params) {
+      return superagent.post(url).send(params);
+    } else {
+      return superagent.post(url);
+    }
   }
-  put(url: string, params: Record<string, any>) {
-    return superagent.put(url).send(params);
+  put(url: string, params: unknown) {
+    if (params) {
+      return superagent.put(url).send(params);
+    } else {
+      return superagent.put(url);
+    }
   }
-  patch(url: string, params: Record<string, any>) {
-    return superagent.patch(url).send(params);
+  patch(url: string, params: unknown) {
+    if (params) {
+      return superagent.patch(url).send(params);
+    } else {
+      return superagent.patch(url);
+    }
   }
-  delete(url: string, params: Record<string, any>) {
-    return superagent.delete(url).send(params);
+  delete(url: string, params: unknown) {
+    if (params) {
+      return superagent.delete(url).send(params);
+    } else {
+      return superagent.delete(url);
+    }
   }
-  get(url: string, params: Record<string, any>) {
-    return superagent.get(url).query(params);
+  get(url: string, params: unknown) {
+    if (params) {
+      return superagent.get(url).query(params);
+    } else {
+      return superagent.get(url);
+    }
   }
-  request(method: MethodEnum, url: string, params: Record<string, any>) {
+  request(method: MethodEnum, url: string, params?: unknown) {
     return this[method](url, params);
   }
 }

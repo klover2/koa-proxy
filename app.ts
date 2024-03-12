@@ -16,7 +16,7 @@ app.use(
     exposeHeaders: ["*"],
   })
 );
-// app.use(bodyParser());
+app.use(bodyParser());
 
 // 加载路由
 routers(router);
