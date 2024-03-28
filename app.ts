@@ -16,7 +16,11 @@ app.use(
     exposeHeaders: ["*"],
   })
 );
-app.use(bodyParser());
+app.use(
+  bodyParser({
+    enableTypes: ["json", "form", "text"],
+  })
+);
 
 // 加载路由
 routers(router);

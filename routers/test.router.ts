@@ -28,7 +28,6 @@ module.exports = (router: Router): void => {
   });
   router.post("/api", async (ctx: Context, next: Next) => {
     console.log(ctx.request);
-    console.log(ctx.req);
     console.log(ctx.request.rawBody);
     console.log(ctx.request.body);
     ctx.body = true;
