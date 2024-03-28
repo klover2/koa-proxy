@@ -26,4 +26,8 @@ module.exports = (router: Router): void => {
       ctx.body = error.response.text;
     }
   });
+  router.post("/api", async (ctx: Context, next: Next) => {
+    console.log(ctx.request.body);
+    ctx.body = true;
+  });
 };
