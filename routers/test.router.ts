@@ -33,6 +33,7 @@ module.exports = (router: Router): void => {
   });
   router.post("/api2", async (ctx: Context, next: Next) => {
     console.log("---------api2");
+    console.log("---------api2");
     console.log(ctx.request.body);
     ctx.body = true;
   });
